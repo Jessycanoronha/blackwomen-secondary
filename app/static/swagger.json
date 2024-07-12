@@ -1,0 +1,243 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Black Woman History API",
+    "description": "API para gerenciar informações sobre figuras históricas de mulheres negras.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9000/api"
+    }
+  ],
+  "paths": {
+    "/women": {
+      "get": {
+        "summary": "Retorna todas as figuras históricas de mulheres.",
+        "responses": {
+          "200": {
+            "description": "Lista de figuras históricas."
+          }
+        }
+      },
+      "post": {
+        "summary": "Cria uma nova figura histórica de mulher.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  },
+                  "slug": {
+                    "type": "string"
+                  },
+                  "order": {
+                    "type": "integer"
+                  },
+                  "credits": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "birthdate": {
+                    "type": "string"
+                  },
+                  "deathdate": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Figura histórica criada com sucesso."
+            }
+          }
+        }
+      }
+    },
+    "/women/{id}": {
+      "get": {
+        "summary": "Retorna uma figura histórica específica pelo ID.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID da figura histórica."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Figura histórica encontrada."
+          },
+          "404": {
+            "description": "Figura histórica não encontrada."
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualiza uma figura histórica pelo ID.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID da figura histórica."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  },
+                  "slug": {
+                    "type": "string"
+                  },
+                  "order": {
+                    "type": "integer"
+                  },
+                  "credits": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "birthdate": {
+                    "type": "string"
+                  },
+                  "deathdate": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Figura histórica atualizada com sucesso."
+            },
+            "404": {
+              "description": "Figura histórica não encontrada."
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Atualiza parcialmente uma figura histórica pelo ID.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID da figura histórica."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "image_url": {
+                    "type": "string"
+                  },
+                  "slug": {
+                    "type": "string"
+                  },
+                  "order": {
+                    "type": "integer"
+                  },
+                  "credits": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "birthdate": {
+                    "type": "string"
+                  },
+                  "deathdate": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Figura histórica atualizada parcialmente com sucesso."
+            },
+            "404": {
+              "description": "Figura histórica não encontrada."
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deleta uma figura histórica pelo ID.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID da figura histórica."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Figura histórica deletada com sucesso."
+          },
+          "404": {
+            "description": "Figura histórica não encontrada."
+          }
+        }
+      }
+    }
+  }
+}
