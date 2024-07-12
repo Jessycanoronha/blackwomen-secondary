@@ -71,18 +71,18 @@
         }
       }
     },
-    "/women/{id}": {
+    "/women/{order}": {
       "get": {
-        "summary": "Retorna uma figura histórica específica pelo ID.",
+        "summary": "Retorna uma figura histórica específica pela order.",
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "order",
             "required": true,
             "schema": {
               "type": "integer"
             },
-            "description": "ID da figura histórica."
+            "description": "Order da figura histórica."
           }
         ],
         "responses": {
@@ -95,16 +95,16 @@
         }
       },
       "put": {
-        "summary": "Atualiza uma figura histórica pelo ID.",
+        "summary": "Atualiza uma mulher pela order.",
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "order",
             "required": true,
             "schema": {
               "type": "integer"
             },
-            "description": "ID da figura histórica."
+            "description": "Order da mulher histórica."
           }
         ],
         "requestBody": {
@@ -156,16 +156,16 @@
         }
       },
       "patch": {
-        "summary": "Atualiza parcialmente uma figura histórica pelo ID.",
+        "summary": "Atualiza parcialmente uma figura histórica pela order.",
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "order",
             "required": true,
             "schema": {
               "type": "integer"
             },
-            "description": "ID da figura histórica."
+            "description": "Order da mulher histórica."
           }
         ],
         "requestBody": {
@@ -217,16 +217,16 @@
         }
       },
       "delete": {
-        "summary": "Deleta uma figura histórica pelo ID.",
+        "summary": "Deleta uma figura histórica pela order.",
         "parameters": [
           {
             "in": "path",
-            "name": "id",
+            "name": "order",
             "required": true,
             "schema": {
               "type": "integer"
             },
-            "description": "ID da figura histórica."
+            "description": "Order da figura histórica."
           }
         ],
         "responses": {

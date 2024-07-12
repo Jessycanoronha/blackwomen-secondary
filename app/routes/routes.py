@@ -35,7 +35,7 @@ def get_figure(order):
     figure = Woman.query.filter_by(order=order).first_or_404()
     return jsonify(figure.serialize()), 200
 
-@bp.route('/woman', methods=['POST'])
+@bp.route('/women', methods=['POST'])
 def create_figure():
     data = request.get_json()
     new_woman = Woman(id=data['id'],order=data['order'], slug=data['slug'], title=data['title'], description=data['description'], image_url=data['image_url'], credits=data['credits'], country=data['country'], birthdate=data['birthdate'], deathdate=data['deathdate'])
@@ -43,9 +43,9 @@ def create_figure():
     db.session.commit()
     return jsonify(new_woman.serialize()), 201
 
-@bp.route('/women/<int:id>', methods=['PUT'])
-def update_woman(id):
-    woman = Woman.query.get_or_404(id)
+@bp.route('/women/<int:order>', methods=['PUT'])
+def update_woman(order):
+    woman = Woman.query.filter_by(order=order).first_or_404()
     data = request.get_json()
     
     woman.title = data.get('title', woman.title)
@@ -60,18 +60,18 @@ def update_woman(id):
     woman.credits = data.get('credits', woman.credits)
     
     db.session.commit()
-    return jsonify(woman.to_dict()), 200
+    return jsonify(woman.serialize()), 200
 
-@bp.route('/women/<string:id>', methods=['DELETE'])
-def delete_figure(id):
-    figure = Woman.query.get_or_404(id)
+@bp.route('/women/<int:order>', methods=['DELETE'])
+def delete_figure(order):
+    figure = Woman.query.filter_by(order=order).first_or_404()
     db.session.delete(figure)
     db.session.commit()
     return jsonify({'message': 'Woman deleted successfully'}), 200
 
-@bp.route('/women/<string:id>', methods=['PATCH'])
-def partially_update_woman(id):
-    woman = Woman.query.get_or_404(id)
+@bp.route('/women/<int:order>', methods=['PATCH'])
+def partially_update_woman(order):
+    woman = Woman.query.filter_by(order=order).first_or_404()
     data = request.get_json()
     
     if 'title' in data:

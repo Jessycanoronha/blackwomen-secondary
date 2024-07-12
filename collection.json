@@ -1,0 +1,184 @@
+{
+  "info": {
+    "name": "Women API",
+    "description": "API para gerenciar mulheres históricas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Women",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9000/api/women",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9000",
+          "path": [
+            "api",
+            "women"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Woman by Order",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9000/api/women/{{order}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9000",
+          "path": [
+            "api",
+            "women",
+            "{{order}}"
+          ],
+          "variable": [
+            {
+              "key": "order",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Woman",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1,\n    \"order\": 1,\n    \"slug\": \"woman-1\",\n    \"title\": \"Woman 1\",\n    \"description\": \"Description of Woman 1\",\n    \"image_url\": \"http://example.com/woman1.jpg\",\n    \"credits\": \"Some credits\",\n    \"country\": \"Country\",\n    \"birthdate\": \"1900-01-01\",\n    \"deathdate\": \"2000-01-01\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:9000/api/woman",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9000",
+          "path": [
+            "api",
+            "woman"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Woman",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Updated Woman\",\n    \"description\": \"Updated description\",\n    \"image_url\": \"http://example.com/updated-woman.jpg\",\n    \"order\": 1,\n    \"slug\": \"updated-woman\",\n    \"country\": \"Updated Country\",\n    \"birthdate\": \"1900-01-01\",\n    \"deathdate\": \"2000-01-01\",\n    \"credits\": \"Updated credits\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:9000/api/women/{{order}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9000",
+          "path": [
+            "api",
+            "women",
+            "{{order}}"
+          ],
+          "variable": [
+            {
+              "key": "order",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Woman",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9000/api/women/{{order}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9000",
+          "path": [
+            "api",
+            "women",
+            "{{order}}"
+          ],
+          "variable": [
+            {
+              "key": "order",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Partially Update Woman",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Partially Updated Woman\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:9000/api/women/{{order}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9000",
+          "path": [
+            "api",
+            "women",
+            "{{order}}"
+          ],
+          "variable": [
+            {
+              "key": "order",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
