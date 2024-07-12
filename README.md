@@ -15,6 +15,11 @@ Esta é uma API que permite gerenciar informações sobre figuras históricas de
 - Docker
 - Docker Compose
 
+## Arquitetura
+
+![Diagram](diagram.png)
+
+
 ## Instruções de Instalação
 
 1. Clone o repositório:
